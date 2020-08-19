@@ -43,9 +43,10 @@
 <body>
     <%- include("./partials/nav.ejs") %>
     <h1>Conversión de monedas</h1>
-    <h3>USD - 1</h3>
-    <form action="/" method="GET">
-        <button>update</button>
+    <h3>USD - <%- respuesta.val %></h3>
+    <form action="/converCal" method="POST">
+        <input type="text" name="valor" id="valor">
+        <button>Calcular</button>
     </form>
     <ul>
         <li class="coin">EUR - <%= respuesta.EUR %></li>
@@ -59,5 +60,9 @@
         <% } %>
         <li class="count">Total de consultas - <%= respuesta.count %></li>
     </ul>
+    <script>
+        const val = document.getElementById('valor');
+        txt.focus();
+    </script>
 </body>
 </html>
