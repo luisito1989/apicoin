@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test title</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+        body{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        ul li{
+            list-style: none;
+            margin: 3px 0 3px -50px;
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        .coin{
+            background: rgba(32,200,0,0.6);
+        }
+        .err{
+            background: rgba(200,10,10,0.6);
+        }
+        
+        button {
+            background-color: rgb(10,10,200);
+            width: 100px;
+            padding: 5px;
+            border-style: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversión de monedas</h1>
+    <h3>USD - 1</h3>
+    <form action="/" method="GET">
+        <button>update</button>
+    </form>
+    <ul>
+        <li class="coin">EUR - <%= respuesta.EUR %></li>
+        <li class="coin">BTC - <%= respuesta.BTC %></li>
+        <li class="coin">ETC - <%= respuesta.ETC %></li>
+        <li class="coin">DASH - <%= respuesta.DASH %></li>
+        <li class="coin">Bs - <%= respuesta.Bs %></li>
+        <li class="coin">PTC - <%= respuesta.PTC %></li>
+        <% if (respuesta.err) { %>
+            <li class="err">PTC - <%= respuesta.err %></li>
+        <% } %>
+        <li class="count">Total de consultas - <%= respuesta.count %></li>
+    </ul>
+</body>
+</html>
