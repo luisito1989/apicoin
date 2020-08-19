@@ -26,8 +26,22 @@
             background: rgba(200,10,10,0.6);
         }
         #menu{
+            width: 100%;
+        }
+        #menu ul{
             display: flex;
-            flex-flow: column;
+            flex-wrap: wrap;
+        }
+        #menu ul li{
+            list-style: none;
+            cursor: pointer;
+            width: 100px;
+        }
+        #menu ul li:hover{
+            color: #fff;
+        }
+        #menu ul li a{
+            text-decoration:none;
         }
         button {
             background-color: rgb(10,10,200);
@@ -55,7 +69,7 @@
         <li class="coin">Bs - <%= respuesta.Bs %></li>
         <li class="coin">PTC - <%= respuesta.PTC %></li>
         <% if (respuesta.err) { %>
-            <li class="err">PTC - <%= respuesta.err %></li>
+            <li class="err">Error - <%= respuesta.err %></li>
         <% } %>
         <li class="count">Total de consultas - <%= respuesta.count %></li>
     </ul>
